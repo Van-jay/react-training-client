@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Footer from './components/layout/Footer/Footer';
+// import Footer from './components/layout/Footer/Footer';
 import Header from './components/layout/Header/Header';
 import Home from './pages/Home/Home';
 import SignIn from './pages/SignIn/SignIn';
@@ -17,7 +17,7 @@ const App = () => {
           <Home />
         </Route>
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 };

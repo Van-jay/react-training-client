@@ -34,7 +34,6 @@ module.exports = {
           },
         ],
       },
-      // { test: /\.css$/, loader: 'typings-for-css-modules?modules' },
       {
         test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
         use: ['file-loader'],

@@ -1,3 +1,6 @@
+@import url(./styles/variables.css);
+@import url(./styles/normalize.css);
+
 body,
 html {
   margin: 0;
