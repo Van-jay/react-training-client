@@ -1,0 +1,12 @@
+.InputWrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  font-size: 16px;
+  color: black;
+}
+
+.Input {
+  padding: 6px 12px;
+  border-radius: 5px;
+}
