@@ -1,0 +1,11 @@
+.Dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  /* font-size: 48px; */
+  color: var(--color-5);
+
+  height: calc(100vh - 60px);
+}

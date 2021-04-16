@@ -1,16 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
+import authoriseRequest from '../../api/auth.api';
 import AuthForm from '../../components/AuthForm/AuthForm';
-import { authorise } from '../../store/actions/authActions';
+import { AuthState, getAuthToken } from '../../store/reducers/authReducer';
 import styles from './SignIn.module.css';
 
 const SignIn = () => {
-  const state = useSelector((state: any) => state);
-
+  const history = useHistory();
   const dispatch = useDispatch();
+  const state = useSelector((state: AuthState) => state);
+
+  const authToken = getAuthToken(state);
+
+  useEffect(() => {
+    if (authToken) {
+      history.push('/dashboard');
+    }
+  }, [authToken]);
 
   const signIn = () => {
-    dispatch(authorise('123'));
+    dispatch(authoriseRequest());
     console.log(state);
   };
 

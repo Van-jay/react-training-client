@@ -1,4 +1,4 @@
-interface AuthState {
+export interface AuthState {
   authPending: boolean;
   authToken: string;
   authError: string;

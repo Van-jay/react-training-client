@@ -9,11 +9,8 @@ function authoriseRequest() {
   return (dispatch: any) => {
     dispatch(authorise('123'));
     axios
-      .get('localhost:8000/auth')
+      .get('http://localhost:8000/auth')
       .then((res: any) => {
-        if (res) {
-          throw res.error;
-        }
         dispatch(authoriseSuccess(res));
         return res.products;
       })
