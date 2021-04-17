@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
-import { AuthState, getAuthToken } from '../../store/reducers/authReducer';
+import { getAuthToken } from '../../store/reducers/authReducer';
+import { RootReducer } from '../../store/reducers/rootReducer';
 import styles from './Dashboard.module.css';
 
 const Dashboard = () => {
   // TODO: add with auth hoc
 
   const history = useHistory();
-  const state = useSelector((state: AuthState) => state);
+  const state = useSelector((state: RootReducer) => state).auth;
 
   const authToken = getAuthToken(state);
 

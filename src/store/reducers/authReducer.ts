@@ -19,7 +19,6 @@ const initialState: AuthState = {
 export const authReducer = function (state = initialState, action: any) {
   switch (action.type) {
     case AUTHORISE:
-      console.log(action);
       return {
         ...state,
         pending: true,

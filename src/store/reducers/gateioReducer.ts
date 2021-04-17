@@ -19,7 +19,7 @@ const initialState: GateioState = {
 export const gateioReducer = function (state = initialState, action: any) {
   switch (action.type) {
     case GET_GATEIO_ACCOUNTS:
-      console.log(action);
+      action;
       return {
         ...state,
         accountsPending: true,
