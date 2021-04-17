@@ -1,5 +1,8 @@
-import { AUTHORISE, AUTHORISE_SUCCESS } from '../actions/authActions';
-import { AUTHORISE_ERROR } from '../actions/gateioActions';
+import {
+  AUTHORISE,
+  AUTHORISE_SUCCESS,
+  AUTHORISE_ERROR,
+} from '../actions/authActions';
 
 export interface AuthState {
   authPending: boolean;
