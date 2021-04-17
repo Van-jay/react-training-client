@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../Button/Button';
 import styles from './Header.module.css';
-import globalStyles from '../../../styles/global.module.css';
+import globalStyles from '../../styles/global.module.css';
 import { useHistory } from 'react-router-dom';
 
 const Header = () => {
