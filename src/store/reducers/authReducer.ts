@@ -1,3 +1,6 @@
+import { AUTHORISE, AUTHORISE_SUCCESS } from '../actions/authActions';
+import { AUTHORISE_ERROR } from '../actions/gateioActions';
+
 export interface AuthState {
   authPending: boolean;
   authToken: string;
@@ -12,19 +15,19 @@ const initialState: AuthState = {
 
 export const authReducer = function (state = initialState, action: any) {
   switch (action.type) {
-    case 'AUTHORISE':
+    case AUTHORISE:
       console.log(action);
       return {
         ...state,
         pending: true,
       };
-    case 'AUTHORISE_SUCCESS':
+    case AUTHORISE_SUCCESS:
       return {
         ...state,
         authToken: action.payload,
         pending: false,
       };
-    case 'AUTHORISE_ERROR':
+    case AUTHORISE_ERROR:
       return {
         ...state,
         error: action.payload,
