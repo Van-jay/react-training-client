@@ -8,7 +8,7 @@ const Header = () => {
   const history = useHistory();
 
   const navigateToSignIn = () => {
-    history.push('signin');
+    history.push('auth');
   };
 
   return (
