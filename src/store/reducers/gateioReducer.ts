@@ -24,6 +24,7 @@ export const gateioReducer = function (state = initialState, action: any) {
       return {
         ...state,
         accountsPending: true,
+        accountsError: '',
       };
     case GET_GATEIO_ACCOUNTS_SUCCESS:
       return {
@@ -34,7 +35,7 @@ export const gateioReducer = function (state = initialState, action: any) {
     case GET_GATEIO_ACCOUNTS_ERROR:
       return {
         ...state,
-        error: action.payload,
+        accountsError: action.payload,
         accountsPending: false,
       };
     default:
@@ -45,4 +46,5 @@ export const gateioReducer = function (state = initialState, action: any) {
 export const getGateioAccounts = (state: GateioState) => state.accountsList;
 export const getGateioAccountsPending = (state: GateioState) =>
   state.accountsPending;
-export const getGateioAuthError = (state: GateioState) => state.accountsError;
+export const getGateioAccountsError = (state: GateioState) =>
+  state.accountsError;

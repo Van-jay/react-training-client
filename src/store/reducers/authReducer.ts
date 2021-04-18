@@ -22,6 +22,7 @@ export const authReducer = function (state = initialState, action: any) {
       return {
         ...state,
         pending: true,
+        error: '',
       };
     case AUTHORISE_SUCCESS:
       return {

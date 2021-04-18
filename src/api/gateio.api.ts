@@ -14,7 +14,7 @@ function fetchGateioAccounts() {
         dispatch(getGateioAccountsSuccess(res.data));
       })
       .catch((error) => {
-        dispatch(getGateioAccountsError(error));
+        dispatch(getGateioAccountsError(error.response.data));
       });
   };
 }

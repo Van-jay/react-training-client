@@ -4,15 +4,21 @@ import AccountsListItem from '../AccountsListItem/AccountsListItem';
 
 interface Props {
   accounts: Account[];
+  error: string;
+  pending: boolean;
 }
 
-const AccountsList = ({ accounts }: Props) => {
+const AccountsList = ({ accounts, error }: Props) => {
   return (
     <div>
       <h3>Accounts</h3>
-      {accounts.map((account: Account) => (
-        <AccountsListItem key={account.currency} account={account} />
-      ))}
+      {error ? (
+        <div>{error}</div>
+      ) : (
+        accounts.map((account: Account) => (
+          <AccountsListItem key={account.currency} account={account} />
+        ))
+      )}
     </div>
   );
 };
