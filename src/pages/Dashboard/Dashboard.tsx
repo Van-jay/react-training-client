@@ -1,17 +1,24 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
+import fetchGateioAccounts from '../../api/gateio.api';
+import AccountsList from '../../components/AccountsList/AccountsList';
+import { getGateioAccounts } from '../../store/reducers/gateioReducer';
 import { getAuthToken } from '../../store/reducers/authReducer';
 import { RootReducer } from '../../store/reducers/rootReducer';
 import styles from './Dashboard.module.css';
+import { Account } from '../../models/accounts';
 
 const Dashboard = () => {
   // TODO: add with auth hoc
-
+  const dispatch = useDispatch();
   const history = useHistory();
-  const state = useSelector((state: RootReducer) => state).auth;
 
-  const authToken = getAuthToken(state);
+  const authState = useSelector((state: RootReducer) => state).auth;
+  const authToken = getAuthToken(authState);
+
+  const gateioState = useSelector((state: RootReducer) => state).gateio;
+  const gateioAccounts: Account[] = getGateioAccounts(gateioState);
 
   useEffect(() => {
     if (!authToken) {
@@ -19,7 +26,15 @@ const Dashboard = () => {
     }
   }, [authToken]);
 
-  return <div className={styles.Dashboard}>Dashboard</div>;
+  useEffect(() => {
+    dispatch(fetchGateioAccounts());
+  }, []);
+
+  return (
+    <div className={styles.Dashboard}>
+      <AccountsList accounts={gateioAccounts} />
+    </div>
+  );
 };
 
 export default Dashboard;

@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <header className={styles.Header}>
-      <div className="nav">Nav</div>
+      {/* <div className="nav">Nav</div> */}
       <div className={globalStyles.HorizontalSpacer}></div>
       <Button action={navigateToSignIn}>Sign In</Button>
     </header>

@@ -11,8 +11,7 @@ function fetchGateioAccounts() {
     axios
       .get('http://localhost:8000/gateio/getAccountsList')
       .then((res: any) => {
-        dispatch(getGateioAccountsSuccess(res));
-        return res.products;
+        dispatch(getGateioAccountsSuccess(res.data));
       })
       .catch((error) => {
         dispatch(getGateioAccountsError(error));

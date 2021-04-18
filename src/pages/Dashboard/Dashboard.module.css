@@ -1,11 +1,14 @@
 .Dashboard {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* flex-direction: column; */
 
   /* font-size: 48px; */
-  color: var(--color-5);
+  /* color: var(--color-5); */
+
+  padding: 40px;
+  margin-left: 60px;
 
   height: calc(100vh - var(--header-height));
 }

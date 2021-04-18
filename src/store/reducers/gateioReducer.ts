@@ -1,3 +1,4 @@
+import { Account } from '../../models/accounts';
 import {
   GET_GATEIO_ACCOUNTS,
   GET_GATEIO_ACCOUNTS_ERROR,
@@ -5,7 +6,7 @@ import {
 } from '../actions/gateioActions';
 
 export interface GateioState {
-  accountsList: any[];
+  accountsList: Account[];
   accountsPending: boolean;
   accountsError: string;
 }
@@ -41,6 +42,7 @@ export const gateioReducer = function (state = initialState, action: any) {
   }
 };
 
-export const getAccounts = (state: GateioState) => state.accountsList;
-export const getAccountsPending = (state: GateioState) => state.accountsPending;
-export const getAuthError = (state: GateioState) => state.accountsError;
+export const getGateioAccounts = (state: GateioState) => state.accountsList;
+export const getGateioAccountsPending = (state: GateioState) =>
+  state.accountsPending;
+export const getGateioAuthError = (state: GateioState) => state.accountsError;
