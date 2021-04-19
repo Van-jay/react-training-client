@@ -12,6 +12,7 @@ import { getAuthToken } from '../../store/reducers/authReducer';
 import { RootReducer } from '../../store/reducers/rootReducer';
 import styles from './Dashboard.module.css';
 import { Account } from '../../models/accounts';
+import Balance from '../../components/Balance/Balance';
 
 const Dashboard = () => {
   // TODO: add with auth hoc
@@ -43,6 +44,7 @@ const Dashboard = () => {
         error={gateioAccountsError}
         pending={gateioAccountsPending}
       />
+      <Balance />
     </div>
   );
 };
