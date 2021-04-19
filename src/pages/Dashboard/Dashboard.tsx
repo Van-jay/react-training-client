@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
-import fetchGateioAccounts from '../../api/gateio.api';
 import AccountsList from '../../components/AccountsList/AccountsList';
 import {
   getGateioAccounts,
@@ -13,6 +12,8 @@ import { RootReducer } from '../../store/reducers/rootReducer';
 import styles from './Dashboard.module.css';
 import { Account } from '../../models/accounts';
 import Balance from '../../components/Balance/Balance';
+import { getStartingBalance } from '../../store/reducers/balanceReducer';
+import { fetchGateioAccounts, fetchStartingBalance } from '../../api/api';
 
 const Dashboard = () => {
   // TODO: add with auth hoc
@@ -27,6 +28,11 @@ const Dashboard = () => {
   const gateioAccountsError: string = getGateioAccountsError(gateioState);
   const gateioAccountsPending: boolean = getGateioAccountsPending(gateioState);
 
+  const balanceState = useSelector((state: RootReducer) => state).balance;
+  const startingBalance: number = getStartingBalance(balanceState);
+  // const gateioAccountsError: string = getGateioAccountsError(gateioState);
+  // const gateioAccountsPending: boolean = getGateioAccountsPending(gateioState);
+
   useEffect(() => {
     if (!authToken) {
       history.push('/auth');
@@ -35,6 +41,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     dispatch(fetchGateioAccounts());
+    dispatch(fetchStartingBalance());
   }, []);
 
   return (
@@ -44,7 +51,7 @@ const Dashboard = () => {
         error={gateioAccountsError}
         pending={gateioAccountsPending}
       />
-      <Balance />
+      <Balance startingBalance={startingBalance} />
     </div>
   );
 };

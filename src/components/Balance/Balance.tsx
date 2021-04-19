@@ -1,9 +1,14 @@
 import React from 'react';
 
-const Balance = () => {
+interface Props {
+  startingBalance: number;
+}
+
+const Balance = ({ startingBalance }: Props) => {
   return (
     <div>
       <h3>Starting Balance</h3>
+      <div>{startingBalance}</div>
     </div>
   );
 };
