@@ -42,9 +42,3 @@ export const gateioReducer = function (state = initialState, action: any) {
       return state;
   }
 };
-
-export const getGateioAccounts = (state: GateioState) => state.accountsList;
-export const getGateioAccountsPending = (state: GateioState) =>
-  state.accountsPending;
-export const getGateioAccountsError = (state: GateioState) =>
-  state.accountsError;

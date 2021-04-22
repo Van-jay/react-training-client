@@ -6,13 +6,13 @@ import {
   getGateioAccounts,
   getGateioAccountsError,
   getGateioAccountsPending,
-} from '../../store/reducers/gateioReducer';
-import { getAuthToken } from '../../store/reducers/authReducer';
+} from '../../store/selectors/gateioSelector';
+import { getAuthToken } from '../../store/selectors/authSelector';
 import { RootReducer } from '../../store/reducers/rootReducer';
 import styles from './Dashboard.module.css';
 import { Account } from '../../models/accounts';
 import Balance from '../../components/Balance/Balance';
-import { getStartingBalance } from '../../store/reducers/balanceReducer';
+import { getStartingBalance } from '../../store/selectors/balanceSelector';
 import {
   fetchEditStartingBalance,
   fetchGateioAccounts,

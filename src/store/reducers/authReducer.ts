@@ -40,7 +40,3 @@ export const authReducer = function (state = initialState, action: any) {
       return state;
   }
 };
-
-export const getAuthToken = (state: AuthState) => state.authToken;
-export const getAuthPending = (state: AuthState) => state.authPending;
-export const getAuthError = (state: AuthState) => state.authError;
