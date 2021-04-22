@@ -1,10 +1,12 @@
 import axios from 'axios';
 import {
+  editStartingBalance,
+  editStartingBalanceError,
+  editStartingBalanceSuccess,
   getStartingBalance,
   getStartingBalanceError,
   getStartingBalanceSuccess,
 } from '../store/actions/balanceActions';
-import {} from '../store/actions/gateioActions';
 
 function fetchStartingBalance() {
   return (dispatch: any) => {
@@ -20,4 +22,18 @@ function fetchStartingBalance() {
   };
 }
 
-export default fetchStartingBalance;
+function fetchEditStartingBalance(balance: number) {
+  return (dispatch: any) => {
+    dispatch(editStartingBalance({ startingBalance: balance }));
+    axios
+      .get('http://localhost:8000/balance/getStartingBalance')
+      .then((res: any) => {
+        dispatch(editStartingBalanceSuccess(res.data.startingBalance));
+      })
+      .catch((error) => {
+        dispatch(editStartingBalanceError(error));
+      });
+  };
+}
+
+export { fetchStartingBalance, fetchEditStartingBalance };

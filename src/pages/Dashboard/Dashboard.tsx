@@ -13,7 +13,11 @@ import styles from './Dashboard.module.css';
 import { Account } from '../../models/accounts';
 import Balance from '../../components/Balance/Balance';
 import { getStartingBalance } from '../../store/reducers/balanceReducer';
-import { fetchGateioAccounts, fetchStartingBalance } from '../../api/api';
+import {
+  fetchEditStartingBalance,
+  fetchGateioAccounts,
+  // fetchStartingBalance,
+} from '../../api/api';
 
 const Dashboard = () => {
   // TODO: add with auth hoc
@@ -41,7 +45,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     dispatch(fetchGateioAccounts());
-    dispatch(fetchStartingBalance());
+    dispatch(fetchEditStartingBalance(480));
   }, []);
 
   return (
