@@ -21,7 +21,7 @@ const Auth = () => {
   }, [authToken]);
 
   const signIn = () => {
-    dispatch(authoriseRequest());
+    dispatch(authoriseRequest({ username: 'example', password: 'password' }));
   };
 
   return (

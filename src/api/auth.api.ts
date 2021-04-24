@@ -5,11 +5,11 @@ import {
   authoriseSuccess,
 } from '../store/actions/authActions';
 
-function authoriseRequest() {
+function authoriseRequest(authData: { username: string; password: string }) {
   return (dispatch: any) => {
     dispatch(authorise('123'));
     axios
-      .get('http://localhost:8000/auth')
+      .post('http://localhost:8000/auth', authData)
       .then((res: any) => {
         dispatch(authoriseSuccess(res));
         return res.products;
