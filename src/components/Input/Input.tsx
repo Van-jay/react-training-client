@@ -10,8 +10,15 @@ interface Props {
 const Input = ({ name, label, onChange }: Props) => {
   return (
     <div className={styles.InputWrapper}>
-      <label htmlFor={name}>{label}</label>
-      <input className={styles.Input} name={name} onChange={onChange}></input>
+      <label className={styles.Label} htmlFor={name}>
+        {label}
+      </label>
+      <input
+        className={styles.Input}
+        name={name}
+        placeholder={label}
+        onChange={onChange}
+      ></input>
     </div>
   );
 };

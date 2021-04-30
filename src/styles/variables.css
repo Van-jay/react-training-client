@@ -5,6 +5,7 @@
   --color-4: #354f52;
   --color-5: #2f3e46;
   --white: #ffffff;
+  --gray: rgba(10, 30, 66, 0.1);
 
   --header-height: 60px;
 }

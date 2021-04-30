@@ -9,9 +9,9 @@ interface Props {
 
 const AuthForm = ({ signInAction }: Props) => {
   return (
-    <>
+    <div className={styles.AuthFormWrapper}>
       <h1>Auth</h1>
-      <div className={styles.AuthFormWrapper}>
+      <div className={styles.InputsWrapper}>
         <Input
           name="username"
           label="Username"
@@ -23,10 +23,9 @@ const AuthForm = ({ signInAction }: Props) => {
           label="Password"
           onChange={() => console.log(123)}
         ></Input>
-
-        <Button action={signInAction}>Sign In</Button>
       </div>
-    </>
+      <Button action={signInAction}>Sign In</Button>
+    </div>
   );
 };
 
