@@ -10,7 +10,7 @@ function authoriseRequest(authData: { username: string; password: string }) {
   return (dispatch: any) => {
     dispatch(authorise('123'));
     axios
-      .post('http://localhost:8000/auth', { body: authData })
+      .post('http://localhost:8000/auth', { ...authData })
       .then((res: any) => {
         const token = res.data.token;
         dispatch(authoriseSuccess(token));
