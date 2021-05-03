@@ -10,6 +10,7 @@
   padding: 40px;
   margin-left: 60px;
   gap: 20px;
+  background: var(--gray-1);
 
   height: calc(100vh - var(--header-height));
 }

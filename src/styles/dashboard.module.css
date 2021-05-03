@@ -1,0 +1,13 @@
+.DashboardItemWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding: 10px;
+  background: var(--white);
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px 1px rgba(34, 60, 80, 0.15);
+}
+
+.DashboardItemHeading {
+  margin-bottom: 10px;
+}

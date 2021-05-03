@@ -3,13 +3,19 @@
   flex-direction: column;
   min-width: 320px;
   font-size: 16px;
-  color: black;
+  /* color: black; */
 }
 
 .Input {
   padding: 12px;
   border-radius: 15px;
+  border: 1px solid var(--color-1);
   outline: none;
+}
+
+.Input:hover,
+.Input:focus {
+  border: 1px solid var(--color-3);
 }
 
 .Label {

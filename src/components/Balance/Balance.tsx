@@ -1,4 +1,5 @@
 import React from 'react';
+import dashboardStyles from '../../styles/dashboard.module.css';
 
 interface Props {
   startingBalance: number;
@@ -6,8 +7,8 @@ interface Props {
 
 const Balance = ({ startingBalance }: Props) => {
   return (
-    <div>
-      <h3>Starting Balance</h3>
+    <div className={dashboardStyles.DashboardItemWrapper}>
+      <h3 className={dashboardStyles.DashboardItemHeading}>Starting Balance</h3>
       <div>{startingBalance}</div>
     </div>
   );

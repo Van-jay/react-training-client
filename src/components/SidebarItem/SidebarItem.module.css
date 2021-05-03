@@ -4,3 +4,9 @@
   justify-content: center;
   height: 60px;
 }
+
+.SidebarItem:hover {
+  cursor: pointer;
+  background: var(--color-3);
+  color: var(--white);
+}

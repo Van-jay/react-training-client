@@ -6,8 +6,12 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Home from './pages/Home/Home';
 import Auth from './pages/Auth/Auth';
+import GuardedRoute from './guards/GuardedRoute';
+import { getIsAuthenticated } from './utils/auth.utils';
 
 const App = () => {
+  const isAuthenticated = getIsAuthenticated();
+
   return (
     <Router>
       <Header />
@@ -16,9 +20,11 @@ const App = () => {
         <Route path="/auth">
           <Auth />
         </Route>
-        <Route path="/dashboard">
-          <Dashboard />
-        </Route>
+        <GuardedRoute
+          path="/dashboard"
+          component={Dashboard}
+          auth={isAuthenticated}
+        />
         <Route path="/">
           <Home />
         </Route>
