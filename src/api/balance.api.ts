@@ -1,4 +1,4 @@
-import axios from 'axios';
+import http from '../utils/api';
 import { Balance } from '../models/balance';
 import {
   editStartingBalance,
@@ -12,7 +12,7 @@ import {
 function fetchStartingBalance() {
   return (dispatch: any) => {
     dispatch(getStartingBalance());
-    axios
+    http
       .get<Balance>('http://localhost:8000/balance/getStartingBalance')
       .then((res: any) => {
         dispatch(getStartingBalanceSuccess(res.data.startingBalance));
@@ -26,7 +26,7 @@ function fetchStartingBalance() {
 function fetchEditStartingBalance(balance: number) {
   return (dispatch: any) => {
     dispatch(editStartingBalance({ startingBalance: balance }));
-    axios
+    http
       .get('http://localhost:8000/balance/getBalance')
       .then((res: any) => {
         dispatch(editStartingBalanceSuccess(res.data.startingBalance));

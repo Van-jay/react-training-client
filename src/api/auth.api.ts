@@ -1,4 +1,4 @@
-import axios from 'axios';
+import http from '../utils/api';
 import {
   authorise,
   authoriseError,
@@ -9,7 +9,7 @@ import { resetAuthToken, setAuthToken } from '../utils/auth.utils';
 function authoriseRequest(authData: { username: string; password: string }) {
   return (dispatch: any) => {
     dispatch(authorise('123'));
-    axios
+    http
       .post('http://localhost:8000/auth', { ...authData })
       .then((res: any) => {
         const token = res.data.token;

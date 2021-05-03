@@ -1,4 +1,4 @@
-import axios from 'axios';
+import http from '../utils/api';
 import {
   getGateioAccounts,
   getGateioAccountsError,
@@ -9,7 +9,7 @@ import { Account } from '../models/accounts';
 function fetchGateioAccounts() {
   return (dispatch: any) => {
     dispatch(getGateioAccounts());
-    axios
+    http
       .get<Account[]>('http://localhost:8000/gateio/getAccountsList')
       .then(({ data }) => {
         dispatch(getGateioAccountsSuccess(data));
