@@ -11,7 +11,6 @@ import { getIsAuthenticated } from './utils/auth.utils';
 
 const App = () => {
   const isAuthenticated = getIsAuthenticated();
-
   return (
     <Router>
       <Header />

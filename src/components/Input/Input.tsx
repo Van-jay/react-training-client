@@ -1,10 +1,12 @@
+// TODO: remove eslint-disable
 import React from 'react';
 import styles from './Input.module.css';
 
 interface Props {
   name: string;
   label: string;
-  onChange: () => void;
+  // eslint-disable-next-line no-unused-vars
+  onChange: (value: string) => void;
 }
 
 const Input = ({ name, label, onChange }: Props) => {
@@ -17,7 +19,7 @@ const Input = ({ name, label, onChange }: Props) => {
         className={styles.Input}
         name={name}
         placeholder={label}
-        onChange={onChange}
+        onChange={(e) => onChange(e.currentTarget.value)}
       ></input>
     </div>
   );
