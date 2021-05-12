@@ -16,9 +16,18 @@ const AuthForm = ({ signInAction }: Props) => {
     <div className={styles.AuthFormWrapper}>
       <h1>Auth</h1>
       <div className={styles.InputsWrapper}>
-        <Input name="username" label="Username" onChange={setUsername}></Input>
-
-        <Input name="password" label="Password" onChange={setPassword}></Input>
+        <Input
+          name="username"
+          label="Username"
+          onChange={setUsername}
+          value={username}
+        ></Input>
+        <Input
+          name="password"
+          label="Password"
+          onChange={setPassword}
+          value={password}
+        ></Input>
       </div>
       <Button action={() => signInAction(username, password)}>Sign In</Button>
     </div>

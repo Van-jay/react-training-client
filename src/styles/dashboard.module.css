@@ -11,3 +11,8 @@
 .DashboardItemHeading {
   margin-bottom: 10px;
 }
+
+.DashboardItemHeadingWrapper {
+  display: flex;
+  justify-content: space-between;
+}

@@ -16,6 +16,7 @@ import {
   fetchGateioAccounts,
   // fetchStartingBalance,
 } from '../../api/api';
+// import { editStartingBalance } from '../../store/actions/balanceActions';
 
 const Dashboard = () => {
   // TODO: add with auth hoc
@@ -43,7 +44,10 @@ const Dashboard = () => {
         error={gateioAccountsError}
         pending={gateioAccountsPending}
       />
-      <Balance startingBalance={startingBalance} />
+      <Balance
+        startingBalance={startingBalance}
+        // editStartingBalance={editStartingBalance}
+      />
     </div>
   );
 };
